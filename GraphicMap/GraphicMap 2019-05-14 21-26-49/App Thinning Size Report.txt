@@ -1,0 +1,15 @@
+
+App Thinning Size Report for All Variants of GraphicMap
+
+Variant: GraphicMap-6F953CDE-B3BC-4643-A0E4-C509900D766A.ipa
+Supported variant descriptors: [device: iPhone10,6, os-version: 11], [device: iPhone9,2, os-version: 11], [device: iPhone10,5, os-version: 11], [device: iPhone9,4, os-version: 11], [device: iPhone10,2, os-version: 11], and [device: iPhone10,3, os-version: 11]
+App + On Demand Resources size: 8.6 MB compressed, 21.2 MB uncompressed
+App size: 8.6 MB compressed, 21.2 MB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed
+
+
+Variant: GraphicMap-7A5DF7BF-AF62-4BFE-8008-A452622056B2.ipa
+Supported variant descriptors: [device: iPhone11,4, os-version: 12], [device: iPhone11,2, os-version: 12], [device: iPhone9,2, os-version: 12], [device: iPhone10,3, os-version: 12], [device: iPhone11,6, os-version: 12], [device: iPhone10,2, os-version: 12], [device: iPhone10,6, os-version: 12], [device: iPhone9,4, os-version: 12], and [device: iPhone10,5, os-version: 12]
+App + On Demand Resources size: 7.4 MB compressed, 21.2 MB uncompressed
+App size: 7.4 MB compressed, 21.2 MB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed
