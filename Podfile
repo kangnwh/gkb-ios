@@ -3,9 +3,7 @@ platform :ios,'10.0'
 use_frameworks!
 
 target 'GraphicMap' do
-    pod 'SwiftMessages', '5.0.0'
-    pod 'GoogleMaps'
-    pod 'GooglePlaces'
+    
 end
 
 

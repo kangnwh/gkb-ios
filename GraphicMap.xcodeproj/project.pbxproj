@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0720B9DB2297730600463BA0 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0720B9DA2297730600463BA0 /* WebKit.framework */; };
 		074A89782223CE19005EEC44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074A89772223CE19005EEC44 /* AppDelegate.swift */; };
 		074A897A2223CE19005EEC44 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074A89792223CE19005EEC44 /* ViewController.swift */; };
 		074A897D2223CE19005EEC44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 074A897B2223CE19005EEC44 /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0720B9DA2297730600463BA0 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		074A89742223CE19005EEC44 /* GraphicMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GraphicMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		074A89772223CE19005EEC44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		074A89792223CE19005EEC44 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0720B9DB2297730600463BA0 /* WebKit.framework in Frameworks */,
 				18D4EE357B509DBE269DDE19 /* Pods_GraphicMap.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -144,6 +147,7 @@
 		24D96F09DF14062561974019 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0720B9DA2297730600463BA0 /* WebKit.framework */,
 				FEE9F9706CF3BF90366D7E91 /* Pods_GraphicMap.framework */,
 			);
 			name = Frameworks;
@@ -169,8 +173,6 @@
 				074A89702223CE19005EEC44 /* Sources */,
 				074A89712223CE19005EEC44 /* Frameworks */,
 				074A89722223CE19005EEC44 /* Resources */,
-				B568CB2B2B45F1880936B173 /* [CP] Embed Pods Frameworks */,
-				C8C756DAF00EA7F38A0D2078 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -225,7 +227,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
-				ORGANIZATIONNAME = UoM;
+				ORGANIZATIONNAME = "";
 				TargetAttributes = {
 					074A89732223CE19005EEC44 = {
 						CreatedOnToolsVersion = 10.1;
@@ -305,44 +307,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B568CB2B2B45F1880936B173 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GraphicMap/Pods-GraphicMap-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GraphicMap/Pods-GraphicMap-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C8C756DAF00EA7F38A0D2078 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GraphicMap/Pods-GraphicMap-resources.sh",
-				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
-				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GraphicMap/Pods-GraphicMap-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -531,6 +495,7 @@
 			baseConfigurationReference = 7AC34E5A8F8157A84D35E99B /* Pods-GraphicMap.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KBZ584P6FG;
 				INFOPLIST_FILE = GraphicMap/Info.plist;
@@ -539,8 +504,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = GraphicMap;
+				PRODUCT_BUNDLE_IDENTIFIER = gkb;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -551,6 +517,7 @@
 			baseConfigurationReference = 83D76F6CB6A1BD806401C269 /* Pods-GraphicMap.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KBZ584P6FG;
 				INFOPLIST_FILE = GraphicMap/Info.plist;
@@ -559,8 +526,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = GraphicMap;
+				PRODUCT_BUNDLE_IDENTIFIER = gkb;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

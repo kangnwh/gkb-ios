@@ -23,9 +23,10 @@ class WebViewController: ViewController, WKUIDelegate {
     func setupWKWebView(){
 
         let controller = nativeWebView.configuration.userContentController
-        controller.add(self, name: "share")
-        controller.add(self, name: "location")
-        controller.add(self, name: "print")
+    
+        controller.add(self, name: "share") // sharing callback
+        controller.add(self, name: "location") // get current location callback
+        controller.add(self, name: "print") // for debug
 
         nativeWebView.translatesAutoresizingMaskIntoConstraints = false
 
@@ -38,7 +39,7 @@ class WebViewController: ViewController, WKUIDelegate {
 
         // Things like this should be handled in web code
         nativeWebView.scrollView.bounces = false
-        nativeWebView.scrollView.delegate = self
+//        nativeWebView.scrollView.delegate = self
 
         // Disable swiping to navigate
         nativeWebView.allowsBackForwardNavigationGestures = false
@@ -50,7 +51,7 @@ class WebViewController: ViewController, WKUIDelegate {
         nativeWebView.scrollView.delegate = self
 //        let myURL = URL(string:"http://10.10.5.28:8080/")
         let myURL = URL(string:"http://115.146.90.170:5000/index.html")
-//        let myURL = URL(string:"http://127.0.0.1:8080/index.html")
+//        let myURL = URL(string:"http://127.0.0.1:8080")
         let myRequest = URLRequest(url: myURL!)
         nativeWebView.load(myRequest)
     }
@@ -59,14 +60,15 @@ class WebViewController: ViewController, WKUIDelegate {
 }
 
 extension WebViewController: UIScrollViewDelegate {
-    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        return nil
-    }
+//    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+//        return nil
+//    }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if(scrollView == nativeWebView.scrollView){
             scrollView.contentOffset = CGPoint(x: 0, y: 0)
         }
-        
+    
+
     }
 }
 
@@ -99,7 +101,6 @@ extension WebViewController: WKScriptMessageHandler{
             
             print(message.body)
         }
-        
     }
     
     
