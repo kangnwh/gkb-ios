@@ -9,16 +9,21 @@
 import UIKit
 import WebKit
 import CoreLocation
-
+import MessageUI
 class WebViewController: ViewController, WKUIDelegate {
 
 //    @IBOutlet var webViewContainer: UIView!
     
 //    var nativeWebView: WKWebView!
     
+    let FeedBackEmail = "ruizhangmu@gmail.com"
+    let FeedBackSubject = "[GKB iOS Application Feedback]"
+    
     @IBOutlet var nativeWebView: WKWebView!
     
     let locationManager = CLLocationManager()
+    
+    var mailComposerVC: MFMailComposeViewController?
     
     func setupWKWebView(){
 
@@ -27,6 +32,7 @@ class WebViewController: ViewController, WKUIDelegate {
         controller.add(self, name: "share") // sharing callback
         controller.add(self, name: "location") // get current location callback
         controller.add(self, name: "print") // for debug
+        controller.add(self, name: "mailto") // for email feedback
 
         nativeWebView.translatesAutoresizingMaskIntoConstraints = false
 
@@ -49,7 +55,6 @@ class WebViewController: ViewController, WKUIDelegate {
         initLocationManager()
         setupWKWebView()
         nativeWebView.scrollView.delegate = self
-//        let myURL = URL(string:"http://10.10.5.28:8080/")
         let myURL = URL(string:"http://115.146.90.170:5000/index.html")
 //        let myURL = URL(string:"http://127.0.0.1:8080")
         let myRequest = URLRequest(url: myURL!)
@@ -88,10 +93,7 @@ extension WebViewController: WKScriptMessageHandler{
             guard let locValue: CLLocationCoordinate2D = self.locationManager.location?.coordinate else{
                 return
             }
-//            nativeWebView.evaluateJavaScript(
-//                "console.log('abc from swift')"
-//                , completionHandler: nil)
-//
+
             let lat = Double(locValue.latitude)
             let log = Double(locValue.longitude)
             nativeWebView.evaluateJavaScript(
@@ -100,10 +102,37 @@ extension WebViewController: WKScriptMessageHandler{
         }else if(message.name == "print"){
             
             print(message.body)
+        }else if(message.name == "mailto"){
+//            if let url = URL(string: "mailto:\(FeedBackEmail)") {
+//                if #available(iOS 10.0, *) {
+//                    UIApplication.shared.open(url)
+//                } else {
+//                    UIApplication.shared.openURL(url)
+//                }
+//            }
+            
+            
+            self.mailComposerVC = MFMailComposeViewController()
+            if let mailVC = self.mailComposerVC {
+                mailVC.mailComposeDelegate = self
+                mailVC.setToRecipients([self.FeedBackEmail])
+                mailVC.setSubject(self.FeedBackSubject)
+//                mailVC.setMessageBody("", isHTML: false)
+                self.present(mailVC, animated: true, completion: nil)
+            }
+            
         }
     }
     
     
+}
+
+extension WebViewController: MFMailComposeViewControllerDelegate{
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        if let mailVC = self.mailComposerVC {
+            mailVC.dismiss(animated: true, completion: nil)
+        }
+    }
 }
 
 extension WebViewController: CLLocationManagerDelegate{
